@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UTOPTA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/tsne.js"></script>
+	<script src="js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="aplicationDiv">
+        <div class="settingsDiv">
+            <h2>Using t-SNE on personality tests answers (beta)</h2>
+            <div class="headerDiv">
+                <h3>Choose Dataset</h3><a class="infoA"><img src="other/info-symbol.svg" alt="info symbol"></a>
+            </div>
+            <select id="chooseTestSelect">
+                <option value="big5">Big 5</option>
+                <option value="16pf">16PF</option>
+            </select>
+            <a class="loadingStatusA" id="loadingStatusA"></a>
+            <div class="nextDiv">
+                <div class="dataOptionsDiv">
+                    <div class="headerDiv">
+                        <h3>Choose data</h3><a class="infoA"><img src="other/info-symbol.svg" alt="info symbol"></a>
+                    </div>
+                    <div class="inputsDiv" id="dataOptions"></div>
+                </div>
+                <div class="tsneOptionsDiv">
+                    <div class="headerDiv">
+                        <h3>Choose parametrs</h3><a class="infoA"><img src="other/info-symbol.svg" alt="info symbol"></a>
+                    </div>
+                    <div class="inputsDiv">
+                        <label>Sample size:</label>
+                        <input type="number" id="sampleSizeInput" value="1000">
+                        <label>Epsilon:</label>
+                        <input type="number" id="epsilonInput" value="10">
+                        <label>Perplexity:</label>
+                        <input type="number" id="perplexityInput" value="30">
+                    </div>
+                </div>
+                <div class="runOptionsDiv">
+                    <div class="buttonsDiv">
+                        <button class="runButton" id="runButton">Start</button>
+                        <button class="restartButton" id="restartButton">⟲</button>
+                    </div>
+					<p>Iterations: <a id="iterationA">0</a></p>
+					<p>Cost: <a id="costA">0</a></p>
+                </div>   
+                <div class="colorOptionsDiv">
+                    <div class="headerDiv">
+                        <h3>Choose color</h3><a class="infoA"><img src="other/info-symbol.svg" alt="info symbol"></a>
+                    </div>
+                    <select id="chooseColorSelect"></select>
+                </div>
+                <div class="choseAreaOptionsDiv" style="display: none;">
+                    <div class="headerDiv">
+                        <h3>Chose area</h3><a class="infoA"><img src="other/info-symbol.svg" alt="info symbol"></a>
+                    </div>
+                    <label>Chose coordinates:</label>
+                    <div class="splitDiv">
+                        <div class="leftDiv">
+                            <label>x1:</label>
+                            <input type="number" id="x1Input" value="0">
+                            <br>
+                            <label>y1:</label>
+                            <input type="number" id="y1Input" value="0">
+                            <br>
+                            <label>z1:</label>
+                            <input type="number" id="z1Input" value="0">
+                        </div>
+                        <div class="rightDiv">
+                            <label>x2:</label>
+                            <input type="number" id="x1Input" value="0">
+                            <br>
+                            <label>y2:</label>
+                            <input type="number" id="y1Input" value="0">
+                            <br>
+                            <label>z2:</label>
+                            <input type="number" id="z1Input" value="0">
+                        </div>
+                    </div>
+                    <div class="chooseCategoryDiv">
+                        <label>Chose category:</label>
+                        <select id="chooseCategorySelect"></select>
+                    </div>
+                    <button class="showButton" id="showButton">Show</button>
+                </div>   
+            </div>
+        </div>
+        <div class="graphDiv" id="graphContainer"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
